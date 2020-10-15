@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers</title>
+    <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-nav">
-        <div class="navbar-brand"><span>Bookers</span></div>
+        <div class="navbar-brand">Bookers</div>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li>
@@ -60,7 +60,7 @@
         </ul>
       </div>
     </nav>
-
+    
     <div class="container">
       <%= yield %>
       <div class="footer">

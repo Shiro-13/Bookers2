@@ -1,9 +1,9 @@
 <%= flash[:notice] %>
 <div class="row">
-  
+
   <div class="col-xs-3">
     <h1>User info</h1>
-      <p><%= attachment_image_tag @book.user, :profile_image, format:'jpeg', fallback: "no_image_square", size: "100x100" %></p>
+      <p><%= attachment_image_tag @book.user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size: "100x100" %></p>
       <table class="table">
         <tbody>
           <tr>
@@ -16,7 +16,7 @@
           </tr>
         </tbody>
       </table>
-      
+
       <div class="row">
         <% if @book.user == current_user %>
           <%= link_to edit_user_path(@book.user) do %>
@@ -32,8 +32,8 @@
           <% end %>
         <% end %>
       </div>
-    
-    <div class="row"> 
+
+    <div class="row">
       <h1>New book</h1>
       <%= form_with model: @book_, local:true do |f| %>
         <h5>Title</h5>
@@ -42,15 +42,15 @@
         <%= f.text_area :body, class:'col-xs-12' %>
         <p><%= f.submit 'Create Book', class:"btn btn-primary col-xs-12" %></p>
       <% end %>
-    </div> 
+    </div>
   </div>
-  
+
   <div class="col-xs-9">
     <h1>Book detail</h1>
       <table class="table">
         <tbody>
           <tr>
-            <td><%= attachment_image_tag @book.user, :profile_image, format:'jpeg', fallback: "no_image_square.jpg", size: "50x50" %></br>
+            <td><%= attachment_image_tag @book.user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size: "50x50" %></br>
             <%= link_to @book.user.name, user_path(@book.user) %></td>
             <td><%= link_to @book.title, book_path(@book) %></td>
             <td><%= @book.body %></td>
@@ -70,5 +70,5 @@
         </tbody>
       </table>
   </div>
-  
+
 </div>
